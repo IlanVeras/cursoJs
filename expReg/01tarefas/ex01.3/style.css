@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*evita com que os elementos fiquem maiores que outros*/
+}
+
+body{
+    background-image: url(images/pexels-kaique-rocha-97906.jpg);
+    background-size: cover; /*cobre a página de acordo com o tamanho*/
+    display: flex;
+    height: 100vh; /*faz com que a img ocupe a tela sem repetições*/
+}
+
+h1{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    margin: 20px;
+}
+
+.container{
+    position: absolute;
+    background-color: #13272988;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin-top: 30px;
+    width: 350px;
+    padding: 50px 20px;
+    border-radius: 20% 0;
+    box-shadow: 1px 2px 10px black, 3px 6px 20px black;
+}
+
+.cpftxt{
+    width: 100%;
+    height: 46px;
+    background-color: transparent;
+    border: none; /*tira a borda*/
+    outline: none;
+    border-bottom: 1px solid white;
+    color: white;
+    transition: .25s ease-in-out;
+}
+
+
+.cpftxt-field{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    transform: translateY(18px);
+    transition: .25s ease-in-out;/*suavisa a animação feita logo abaixo*/
+}
+
+input:focus{
+    border-bottom: 2px solid #26a96a;
+    box-shadow: 0 1px 0 0 #26a96a;
+}
+
+input:focus + label{
+    transform: translateY(-14px) scale(.8);/*sobe o label* e o scale(.8) diminui o label no fim dessa animação*/
+    color: #26a96a;
+    font-weight: bold;
+}
+
+
+/*quando o input não estiver mostrando o placeholder vou querer fazer tudo isso abaixo no input*/
+input:not(:placeholder-shown){
+    box-shadow: 0 1px 0 0 #26a96a;
+    border-bottom: #26a96a 1px solid;
+}
+/*quando o input não estiver mostrando o placeholder vou querer fazer tudo isso abaixo no input*/
+input:not(:placeholder-shown) + label{
+    transform: translateY(-14px) scale(.8);
+    /*mantém o label lá em cima (translatY(-14) com uma escala menor (scale(.8))*/
+}
+
+input::placeholder{
+    color: transparent; /*para o label não ficar em cima do placeholder que tem outra função, colocamos a sua cor para transparente*/
+}
+
+button{
+    padding: 15px 50px;
+    margin: 20px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    text-transform: uppercase; /*coloca as letras em maiúsculas*/
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .25s ease-in-out;
+}
+
+button:hover{
+    background: #009FAD;
+}
+
+.center{
+    text-align: center;  
+}
+
+.avisos{
+    font-size: 12px;
+    font-weight: bold;
+    margin: 3px 0 0 1px;
+    color: white;
+    display: none;
+}
+
+.resp{
+    position: relative;
+    background-color: #e63636;
+    top: 0;
+    width: 100%;
+    height: 8%;
+}
+
+div.resp p{
+    color: white;
+    font-weight: bold;
+    /*O código abaixo centraliza o texto na vertical e horizontal*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) }

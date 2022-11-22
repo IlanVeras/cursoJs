@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste 1</title>
+</head>
+<body>
+    <div id="the_div">
+        <ul id="the_list">
+          <li id="the_item">Click me!</li>
+        </ul>
+      </div>
+      
+      <p id="log"></p>
+</body>
+</html>
+<script type="text/javascript" charset="utf-8">
+    function log(string){
+      document.getElementById('log').innerHTML += (string + '<br/>');
+    }
+  
+    document.getElementById('the_div').addEventListener(
+      'click', function(){ log('the_div!') }, false);
+      
+    document.getElementById('the_list').addEventListener(
+      'click', function(){ log('the_list!') }, false);
+      
+    document.getElementById('the_item').addEventListener(
+      'click', function(){ log('the_item!') }, false);
+      stopPropagation()
+</script>
+
+<!--
+   1. Change the addEventListener calls so that the events occur in the following order.      
+      the_div! the_item! the_list! (change the 3rd param of the 2nd addEventListener to false)
+   2. Change the addEventListener calls so that the events occur in the following order.      
+      the_item! the_list! the_div! (change the 3rd param in each addEventListener to false (useCapture = false which is useBubble=true)
+   3. Change the addEventListener calls so that the events occur in the following order.      
+      the_item! (no other events) (change all 3rd params to false, and call event.stopPropagation() in the last addEventListener)
+-->

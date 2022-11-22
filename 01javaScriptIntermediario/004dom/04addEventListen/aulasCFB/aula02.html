@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dv1{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            background-color: #f00;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+    <script>
+        
+        function msg(){
+            console.log('Clicado')
+        }
+
+        function cor(obj, cor){
+            obj.style.backgroundColor=cor;
+        }
+
+
+        function addEventos(){
+            var obj = document.getElementById('dv1')
+            obj.addEventListener("click", msg)
+            obj.addEventListener("mouseover", function(event){
+                cor(obj, "#0fe00f")
+                //sempre usar o mesmo padrão para cores que op style e sempre utilizar aspas duplas
+            })
+            obj.addEventListener("mouseout", function(event){
+                cor(obj, "#f00")
+            })
+        }
+        //como estou rodando o script na parte de cima, a página ainda não foi carregada, por isso devo adcionar um evento a página que só rode a função depois que a pá gina estiver carregada
+        window.addEventListener("load", addEventos);
+    </script>
+</head>
+<body>
+    <div id="dv1"></div>
+</body>
+</html>

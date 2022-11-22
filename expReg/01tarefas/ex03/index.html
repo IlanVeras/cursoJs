@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    hora = 'agora são 20:33'
+    //var reg = new RegExp(/[012]\d:[0-5]\d/g)
+    var reg = new RegExp(/([01]?\d|2[0-3]):[0-5]\d/g)
+    console.log(hora.match(reg))
+    
+
+    var str = "correrp";
+    var regexp = new RegExp(/r$/i);
+    //var n = regexp.test(str);
+    //na variável regep faz-se a verificação de se há a letra 'j', e na variável n temos uma comparação
+    console.log(regexp.test(str));
+
+    str = ['20:59', '22:33', '11:93', '09:05', '23:59', '24:00', '25:00']
+
+    for(let v of str){
+        console.log(`${v} is ${reg.test(v)}`)
+    }
+    //console.log(reg.test(str))
+</script>

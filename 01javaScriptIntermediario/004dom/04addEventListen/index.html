@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 10px solid green;
+            background-color: rgb(24, 148, 24);
+            font-size: 18px;
+            padding: 40px;
+            cursor: pointer;
+        }
+
+        ul{
+            margin: auto;
+            list-style-type: none;
+            width: 20vw;
+            border: 5px solid red;
+            background-color: red;
+        }
+
+        li{
+            margin: 40px;
+            border: 1px solid blue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="ul">
+            <li class="li">The Code Creative</li>
+            <li>Event Bubbling</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<script>
+    const container = document.querySelector('.container')
+    const ul = document.querySelector('ul')
+    const li = document.querySelector('li')
+
+    li.addEventListener('click', () => {
+        console.log('li clicked')
+    })
+
+    ul.addEventListener('click', (event) => {
+        console.log('ul clicked')
+    }, true)
+
+    container.addEventListener('click', () => {
+        console.log('container clicked')
+    }, {capture: true})
+</script>

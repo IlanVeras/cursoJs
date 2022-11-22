@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Testes</title>
+
+	<style>
+        table td:hover {
+            background:#ff0000;
+        }
+	</style>
+</head>
+
+<body>
+	<table>
+        <tr>
+          <td>Hover 1</td>
+          <td>Hover 2</td>
+        </tr>
+      </table>
+</body>
+
+</html>
+<script>
+    var css = 'table td:hover{ background-color: #00ff00 }';
+    var style = document.createElement('style');
+
+    if (style.styleSheet) {
+        style.styleSheet.cssText = css;
+        
+    } else {
+        style.appendChild(document.createTextNode(css));
+        console.log(style.styleSheet)
+    }
+
+    document.getElementsByTagName('head')[0].appendChild(style);
+</script>

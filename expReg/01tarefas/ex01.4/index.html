@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--<h1>Expressões Regulares</h1>
+    <h2>Ex 01</h2>-->
+    <!--<p>A expressão regular \d{3}\.\d{3}\.\d{3}\/\d{2} casa um CPF como 772.843.809-34. Inclua quantificadores para que a pontuação seja opcional.
+
+        A regex resultante deve casar com 77284380934.</p>-->
+        <div class="resp">
+        </div>
+    <div class="container">
+        <h1>Validar CPF</h1>
+        <br> 
+            <div class="cpftxt-field">
+                <input type="text"  class="cpftxt require" autocomplete="off" placeholder="123.456.789-10" maxlength="14" oninput="cpfErros()">
+                <label for="cpf">CPF:</label>
+                <div class="avisos"></div>
+            </div>
+        <br>
+        <div class="center">
+            <!--A classe para este botão servirá para alinha-lo-->
+            <button onclick="verificaCpf()" class="btn">Verificar</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="script.js"></script>
